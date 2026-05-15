@@ -16,7 +16,7 @@
 |---|---|
 | **모델** | YOLOv8n (Ultralytics) — 비전 검사 표준 백본 |
 | **변환 경로** | PyTorch → ONNX → TensorRT (FP32 / FP16 / INT8) |
-| **하드웨어** | NVIDIA RTX 4060 Laptop · CUDA 13.0 · TensorRT 10.x |
+| **하드웨어** | NVIDIA RTX 4060 Laptop · CUDA 13.0 · TensorRT 10.16.1 |
 | **캘리브레이션** | COCO128 · `IInt8EntropyCalibrator2` (Ultralytics 기본) |
 
 ---
@@ -38,19 +38,38 @@ flowchart LR
 
 ## 2. 벤치마크 결과
 
-<!-- BENCHMARK_TABLE_START -->
-> 벤치마크 실행 후 자동으로 채워집니다 (`bench.py` → `benchmark.md`).
-<!-- BENCHMARK_TABLE_END -->
+*warmup 50회 후 1000회 추론 · 입력 640×640 RGB · RTX 4060 Laptop*
+
+| Precision | Engine Size | Mean Latency | p50 | p99 | FPS |
+|:---:|---:|---:|---:|---:|---:|
+| **FP32** | 16.92 MB | 5.384 ms | 5.352 ms | 6.559 ms | 185.7 |
+| **FP16** | 8.32 MB | **4.444 ms** | 4.388 ms | 5.922 ms | **225.0** |
+| **INT8** | **4.49 MB** | 4.521 ms | 4.451 ms | 6.097 ms | 221.2 |
+
+**FP16 가속비**: FP32 대비 **1.21×** 빠름 · 엔진 크기 **51% 절감**
+
+**INT8 가속비**: FP32 대비 1.19× — FP16보다 소폭 느림 (아래 분석 참고) · 엔진 크기 **73% 절감**
 
 ---
 
 ## 3. 핵심 트레이드오프
 
-| 정밀도 | 가속 메커니즘 | 정확도 손실 (일반론) | 적용 권장 |
-|---|---|---|---|
-| **FP32** | 기준 — Tensor Core 미사용 | 0 | 디버깅·기준선 |
-| **FP16** | Tensor Core 활용 (Ada/Ampere) | < 0.5% mAP | 대부분 양산 적용 가능 |
-| **INT8** | INT8 Tensor Core · 양자화 | 0.5 ~ 2% mAP (캘리브 셋 의존) | 사이클타임 압박 시 |
+| 정밀도 | 가속비 (실측) | 엔진 크기 | 정확도 손실 | 적용 권장 |
+|:---:|:---:|:---:|---|---|
+| **FP32** | 기준 | 16.92 MB | 없음 | 디버깅·기준선 |
+| **FP16** | **1.21×** | 8.32 MB | < 0.5% mAP | **양산 1순위** |
+| **INT8** | 1.19× | **4.49 MB** | 0.5~2% (캘리브 의존) | VRAM 제약 Edge |
+
+!!! warning "이번 실측의 반직관적 결과 — INT8이 FP16보다 소폭 느린 이유"
+    일반적으로 INT8 > FP16 속도를 예상하지만, 이번 측정에서는 FP16(4.444ms)이 INT8(4.521ms)보다 빨랐습니다.
+
+    **원인 분석**:
+
+    1. **모델 크기** — YOLOv8n은 3.15M 파라미터의 소형 모델. 연산량보다 메모리 접근 패턴이 병목인 경우 INT8의 compute 이점이 줄어듦
+    2. **Ada Lovelace 4세대 Tensor Core** — RTX 4060의 FP16 Tensor Core 효율이 매우 높아 FP16과 INT8 간 gap이 좁아짐
+    3. **INT8 양자화 오버헤드** — 소형 모델에서 quantization/dequantization 노드 삽입 비용이 상대적으로 부각됨
+
+    **실무 결론**: **속도만 보면 FP16 우선**, INT8은 엔진 크기(4.49 MB)가 중요한 **메모리 제약 Edge 배포**에서 선택.
 
 ---
 
