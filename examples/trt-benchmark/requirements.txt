@@ -1,0 +1,7 @@
+ultralytics>=8.3
+onnx>=1.16
+onnxruntime-gpu>=1.18
+tensorrt>=10.0
+pandas
+tabulate
+numpy

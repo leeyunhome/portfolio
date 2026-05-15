@@ -63,6 +63,7 @@ nav:
     - "CS2 · 93일 에이징 테스트": cases/02-aging-test.md
     - "CS3 · VLM/VLA Edge 추론": cases/03-vlm-edge.md
     - "CS4 · SW 품질 및 보안 관리": cases/04-sw-quality.md
+    - "CS5 · TensorRT 정밀도 벤치마크": cases/05-trt-benchmark.md
 
 extra:
   social:
