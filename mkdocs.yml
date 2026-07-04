@@ -58,12 +58,16 @@ nav:
   - 홈: index.md
   - 프로필: about.md
   - 기술 역량: skills.md
-  - 케이스 스터디:
+  - 포트폴리오:
     - "CS1 · SoC 비전 데이터 무결성": cases/01-soc-vision-integrity.md
     - "CS2 · 93일 에이징 테스트": cases/02-aging-test.md
     - "CS3 · VLM/VLA Edge 추론": cases/03-vlm-edge.md
     - "CS4 · SW 품질 및 보안 관리": cases/04-sw-quality.md
     - "CS5 · TensorRT 정밀도 벤치마크": cases/05-trt-benchmark.md
+  - 취미 프로젝트:
+    - 개요: projects/index.md
+    - "RPi + YOLO 홈 감시카메라": projects/rpi-yolo-guard.md
+    - "로컬 LLM 벤치마킹": projects/local-llm-bench.md
 
 extra:
   social:
