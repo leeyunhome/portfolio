@@ -66,8 +66,7 @@ nav:
     - "CS5 · TensorRT 정밀도 벤치마크": cases/05-trt-benchmark.md
   - 취미 프로젝트:
     - 개요: projects/index.md
-    - "RPi + YOLO 홈 감시카메라": projects/rpi-yolo-guard.md
-    - "로컬 LLM 벤치마킹": projects/local-llm-bench.md
+    - "EBS 영어 회화 추출 파이프라인 (Whisper)": projects/ebs-whisper-pipeline.md
 
 extra:
   social:
