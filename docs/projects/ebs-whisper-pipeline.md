@@ -60,6 +60,9 @@ run.bat --episode N
 | **오디오 구간 분석** | inaSpeechSegmenter (TensorFlow 기반) | 음악/음성 구간 라벨링 |
 | **퍼지 매칭** | N-gram(trigram) Sørensen-Dice 유사도 | ASR 오인식 보정 |
 
+!!! note "실행 환경"
+    온프레미스 **RTX 3080** + CUDA/cuDNN 환경에서 Whisper 추론을 GPU로 수행합니다.
+
 ---
 
 ## 데이터 처리 과정 (5단계 추출)
