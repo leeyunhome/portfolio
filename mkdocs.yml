@@ -54,6 +54,9 @@ markdown_extensions:
   - md_in_html
   - def_list
 
+extra_javascript:
+  - javascripts/hub-back.js
+
 nav:
   - 홈: index.md
   - 프로필: about.md
