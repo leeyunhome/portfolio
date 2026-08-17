@@ -5,12 +5,14 @@
     '@media (max-width:700px){' +
     '.lyh-hub-back{' +
     'display:inline-flex;align-items:center;gap:4px;' +
-    'position:fixed;top:10px;left:10px;z-index:9999;' +
-    'background:rgba(15,17,23,.85);color:#e2e6f0;' +
-    "font:600 12px/1 -apple-system,'Segoe UI',sans-serif;" +
-    'padding:6px 12px;border-radius:20px;' +
-    'border:1px solid rgba(255,255,255,.15);' +
-    'text-decoration:none;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);' +
+    'position:fixed;bottom:14px;left:14px;z-index:9999;' +
+    'background:var(--md-default-bg-color);' +
+    'color:var(--md-default-fg-color);' +
+    "font:600 12px/1 var(--md-text-font-family,-apple-system,'Segoe UI',sans-serif);" +
+    'padding:8px 14px;border-radius:20px;' +
+    'border:1px solid var(--md-default-fg-color--lightest);' +
+    'box-shadow:0 2px 8px rgba(0,0,0,.18);' +
+    'text-decoration:none;' +
     '}}';
   document.head.appendChild(style);
 
