@@ -17,7 +17,7 @@ ONNX/TensorRT 추론 최적화, SoC 레지스터 레벨 디버깅, 93일 무중�
 
 -   :material-shield-check: **93일 연속 가동 · 신뢰성**
 
-    양산 전 CPU/GPU Full-load 93일 무중단 에이징 테스트 100% 통과, Memory Leak·발열 프로파일링, SonarQube·SBOM·국방/공공 인증(STQC, KISA) 대응
+    양산 전 CPU/GPU Full-load 93일 무중단 에이징 테스트 100% 통과, Memory Leak·발열 프로파일링, SonarQube·SBOM·국방/공공 보안 인증 대응
 
 -   :material-rocket-launch: **24+ 직접 구현 프로젝트**
 
@@ -63,7 +63,7 @@ ONNX/TensorRT 추론 최적화, SoC 레지스터 레벨 디버깅, 93일 무중�
     ---
 
     SonarQube 정적 분석·SBOM·영문 AI SDK 문서화 및 배포 서비스 구축.
-    국방·공공(STQC, KISA) 인증 기반 마련.
+    국방·공공 보안 인증 기반 마련.
 
     [:octicons-arrow-right-24: 자세히 보기](cases/04-sw-quality.md)
 
