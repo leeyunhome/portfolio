@@ -86,29 +86,7 @@ flowchart LR
 
 ---
 
-## 5. 면접 질문 대응 메모
-
-이 데모를 만들면서 정리한 **TensorRT 깊은 질문 4개 답안**:
-
-??? question "Q1. 왜 FP16에서 보통 정확도 손실이 거의 없는가?"
-    뉴럴넷 가중치·활성화 분포의 동적 범위가 FP16의 표현 범위 안에 대체로 들어옴.
-    오버플로 위험이 있는 일부 레이어(softmax, exp)는 TensorRT가 자동으로 FP32 fallback을 수행함.
-
-??? question "Q2. INT8 캘리브레이션 데이터는 어떻게 골라야 하는가?"
-    현장 카메라의 분포를 대표해야 함. 동일 라인이라도 시간대·조도·이물질 유형이 다르면
-    별도 캘리브 셋을 가져가야 함. 라인별 파라미터 템플릿(JD 항목)과 함께 관리.
-
-??? question "Q3. 특정 레이어가 INT8에서 크게 떨어진다면?"
-    먼저 per-layer 정확도 추적(TensorRT의 `--verbose` + polygraphy)으로 범인 식별.
-    해당 레이어만 `setPrecision(DataType::kHALF)` 로 FP16 유지하는 mixed precision 적용.
-
-??? question "Q4. TensorRT 엔진 파일이 GPU/드라이버에 종속적인 이유?"
-    TRT 빌드 시 해당 GPU의 SM 아키텍처와 PTX/사이즈에 최적화된 커널을 미리 선택·컴파일하기 때문.
-    배포 환경별 빌드 또는 호환 매트릭스(SM75/SM89 등) 관리 필요.
-
----
-
-## 6. 양산 적용 시 추가 고려사항
+## 5. 양산 적용 시 추가 고려사항
 
 - **DLA 활용** (Jetson AGX/Orin): GPU와 별도 가속기 활용으로 GPU 부담 분산
 - **동적 배치(Dynamic Shapes)**: 라인별 입력 해상도 변경 대응
