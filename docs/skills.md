@@ -1,6 +1,6 @@
 # 기술 역량
 
-> JD 요구사항 대비 보유 역량을 **"모델 최적화 및 운영"** 관점으로 분류했습니다.
+> Edge AI 추론 최적화부터 임베디드 리눅스·하드웨어 제어, 양산 운영·보안, 그리고 풀스택 프로토타이핑까지의 보유 역량입니다.
 
 ---
 
@@ -16,14 +16,15 @@
 
 ---
 
-## 2. Edge 배포 (Edge Deployment)
+## 2. Edge 배포 및 임베디드 리눅스 (Edge & Embedded Systems)
 
 | 역량 | 상세 | 수준 |
 |---|---|---|
-| Docker | 컨테이너 패키징, GPU 리소스 할당, 이미지 관리 | ★★★★☆ |
 | NVIDIA Jetson | Orin NX, Xavier — JetPack, DeepStream, cuDNN | ★★★★★ |
 | Hailo | Hailo-15H NPU 모델 컴파일·추론 | ★★★★☆ |
 | Eyenix SoC | EN675/EN683 — 레지스터 제어, ISP 파라미터 | ★★★★☆ |
+| 커널 · 성능 분석 | Embedded Linux 커널 빌드, `perf` / `ftrace` 병목 프로파일링 | ★★★★☆ |
+| Docker | 컨테이너 패키징, GPU 리소스 할당, 이미지 관리 | ★★★★☆ |
 | ROS/ROS2 | 센서 데이터(IMU, ADC, CAN) 동기화, 노드 설계 | ★★★☆☆ |
 
 ---
@@ -41,7 +42,7 @@
 
 ---
 
-## 4. 비전 AI 모델 (Vision AI)
+## 4. 비전 AI · 멀티모달 · 서비스 파이프라인
 
 | 역량 | 상세 | 수준 |
 |---|---|---|
@@ -49,6 +50,8 @@
 | LPR | 번호판 인식 파이프라인 설계 및 배포 | ★★★★☆ |
 | VLM/VLA | Jetson Orin NX 기반 멀티모달 추론 검증 | ★★★☆☆ |
 | 오검출 방지 | 임계값 조정, ROI 설정, 데이터 파손 원인 분석 | ★★★★☆ |
+| 음성 · LLM 파이프라인 | `faster-whisper` ASR, Gemini API, 자동 수집·배포 파이프라인 | ★★★★☆ |
+| 3D · 디지털 트윈 | 3D Gaussian Splatting, WebGL, 3D 공간 관제 UI | ★★★☆☆ |
 
 ---
 
@@ -63,18 +66,14 @@
 
 ---
 
-## JD ↔ 역량 매핑
+## 핵심 문제 해결 역량 요약
 
-아래는 지원 직무(제조 비전 AI 모델 운영 및 최적화)의 핵심 요구사항과 보유 역량의 직접 매핑입니다.
-
-| JD 요구사항 | 보유 경험 |
+| 영역 | 보유 경험 |
 |---|---|
-| ONNX/TensorRT 최적화 (FP16/INT8) | Jetson·Hailo·Eyenix에서 직접 적용·검증 |
-| Docker 기반 배포 및 런타임 설정 | Edge SoC 환경 컨테이너 패키징 및 GPU 리소스 할당 경험 |
-| 성능 프로파일링, 사이클타임 설계 | 라인 투입 전 정량 벤치마킹 및 파이프라인 병렬화 |
-| 운영 모니터링·로그·알람 구성 | Node-RED 대시보드, Jira 이슈 트래킹 |
-| Fallback/Graceful degradation | SOP 수립 및 장애 대응 절차 문서화 |
-| 장애 대응·변경관리·RCA 수행 | 93일 에이징 테스트 기반 Root Cause 분석 경험 |
-| 표준 운영 문서(SOP), 유지보수 체크리스트 | 양산 현장 투입용 SOP 직접 작성 |
-| 보안/접근권한/감사 로그 관리 | SonarQube·SBOM·STQC/KISA 인증 대응 |
-| Python / C++ | 두 언어 모두 제조 현장 코드베이스에서 실사용 |
+| 추론 최적화 & 양자화 | PyTorch → ONNX → TensorRT(FP16/INT8) Jetson·Hailo·Eyenix 적용·검증 |
+| 컨테이너 배포 & 런타임 | Edge SoC 환경 Docker 패키징 및 GPU 리소스 할당 |
+| 성능 프로파일링 & 사이클타임 | 라인 투입 전 정량 벤치마킹, `perf`/`ftrace` 계측, 파이프라인 병렬화 |
+| 모니터링 & 장애 대응(RCA) | Node-RED 대시보드, Jira 트래킹, 93일 에이징 기반 Root Cause 분석 |
+| 표준 운영 문서(SOP) | 양산 현장 투입용 SOP 및 유지보수 체크리스트 직접 작성 |
+| 보안 & 품질 관리 | SonarQube·SBOM·STQC/KISA 인증 대응 |
+| 개발 언어 | Python · C/C++ · JavaScript / TypeScript |

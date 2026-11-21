@@ -12,7 +12,7 @@ ONNX/TensorRT 모델 최적화부터 SoC 레지스터 레벨 디버깅, 93일 �
 
 ---
 
-## 경력
+## 경력 요약
 
 ```
 현재        │ Embedded AI / Applied AI Engineer
@@ -22,9 +22,6 @@ ONNX/TensorRT 모델 최적화부터 SoC 레지스터 레벨 디버깅, 93일 �
             │ · 93일 에이징 테스트, SOP 수립
             │ · VLM/VLA 선행 연구
             │ · SonarQube·SBOM·AI SDK 영문 문서화
-
-약 3년 전   │ [직무 시작]
-            │ <!-- TODO: 입사 시점·이전 회사명 추가 -->
 ```
 
 ---
@@ -37,18 +34,20 @@ ONNX/TensorRT 모델 최적화부터 SoC 레지스터 레벨 디버깅, 93일 �
 
 ---
 
-## 연락처
+## 엔지니어링 철학 & 강점
 
-- GitHub: [github.com/leeyunhome](https://github.com/leeyunhome)
-- Email: [mszeta@naver.com](mailto:mszeta@naver.com)
+소프트웨어 정의 제조·모빌리티 환경에서는 모델 교체 → 라인 재구성 → 사이클타임 재검증이 빠르게 반복됩니다.
+이 사이클에서 NPU/ISP 파라미터 조정, 메모리 타이밍 제어, SoC 펌웨어 인터페이스 같은 **하위 하드웨어 레이어**와
+**상위 AI 추론·운영 파이프라인**을 동시에 이해하고 연결할 수 있는 것이 가장 큰 강점입니다.
+
+- **Root Cause 지향**: 증상 우회가 아닌 레지스터·메모리·커널(`perf`/`ftrace`) 레벨 원인 규명
+- **운영 가능한 AI**: 단발성 데모가 아니라 93일 연속 가동·SOP·모니터링·보안 인증까지 완결
+- **빠른 프로토타이핑**: 실무 외 24개 이상의 3D·AI·웹 프로젝트를 직접 설계하고 배포
 
 ---
 
-## 현대차 SDF와의 접점
+## 연락처 & 링크
 
-현대자동차의 **SDF(Software Defined Factory)** 는 하드웨어를 소프트웨어로 재정의하는 것을 목표로 합니다.
-이 아키텍처에서 가장 아래 레이어 — NPU/ISP 파라미터 조정, 메모리 타이밍 제어, SoC 펌웨어 인터페이스 — 를
-직접 다뤄본 경험은 SDF의 하드웨어-소프트웨어 인터페이스를 가장 빠르게 이해하고 활용할 수 있는 역량입니다.
-
-모델 교체 → 라인 재구성 → 사이클타임 재검증의 빠른 사이클에서,
-하드웨어 레이어의 제약과 기회를 동시에 이해하는 엔지니어가 필요합니다.
+- **프로젝트 허브**: [leeyunhome.github.io](https://leeyunhome.github.io/)
+- **GitHub**: [github.com/leeyunhome](https://github.com/leeyunhome)
+- **Email**: [mszeta@naver.com](mailto:mszeta@naver.com)
