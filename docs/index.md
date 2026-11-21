@@ -6,7 +6,7 @@ SoC 레지스터부터 현장 라인 사이클, 그리고 3D·AI 서비스까지
 </div>
 
 Edge SoC(Jetson, Hailo, Eyenix) 기반 비전 AI 시스템 배포·운영 경험 약 3년.
-ONNX/TensorRT 추론 최적화, SoC 레지스터 레벨 디버깅, 93일 무중단 에이징 테스트, VLM/VLA 선행 연구부터
+ONNX/TensorRT 추론 최적화, SoC 레지스터 레벨 디버깅, 93일 무중단 에이징 테스트, VLM/VLA 선행 조사부터
 개인 오픈소스·웹 프로젝트 24종 직접 설계·배포까지 — 하드웨어 레이어부터 사용자 인터페이스까지 전 스택을 다룹니다.
 
 <div class="grid cards" markdown>
@@ -53,7 +53,7 @@ ONNX/TensorRT 추론 최적화, SoC 레지스터 레벨 디버깅, 93일 무중�
 
     ---
 
-    차세대 제조 로봇을 위한 멀티모달 AI 선행 연구.
+    차세대 제조 로봇을 위한 멀티모달 AI 선행 조사.
     **Edge 환경에서 VLM 실시간 구동 가능성**을 성능 프로파일링으로 입증.
 
     [:octicons-arrow-right-24: 자세히 보기](cases/03-vlm-edge.md)

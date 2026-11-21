@@ -20,7 +20,7 @@ ONNX/TensorRT 모델 최적화부터 SoC 레지스터 레벨 디버깅, 93일 �
             │ · ONNX/TensorRT 최적화 (FP16/INT8)
             │ · Jetson Orin NX, Hailo-15H, Eyenix EN675/EN683
             │ · 93일 에이징 테스트, SOP 수립
-            │ · VLM/VLA 선행 연구
+            │ · VLM/VLA 선행 조사
             │ · SonarQube·SBOM·AI SDK 영문 문서화
 ```
 
